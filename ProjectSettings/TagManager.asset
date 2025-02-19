@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tree
+  - Soldiers
   layers:
   - Default
   - TransparentFX
@@ -46,7 +48,4 @@ TagManager:
     locked: 0
   - name: Trees
     uniqueID: 2169322159
-    locked: 0
-  - name: asdasdasd
-    uniqueID: 3862694081
     locked: 0
