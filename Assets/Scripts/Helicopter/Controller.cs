@@ -50,8 +50,6 @@ public class Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided with: " + collision.gameObject.name);
-
         if (collision.gameObject.tag == "Soldier")
 
             // +1 soldier if not at max capacity
@@ -65,5 +63,11 @@ public class Controller : MonoBehaviour
                 Debug.Log("Max capacity reached!");
             }
 
+        if (collision.gameObject.tag == "Tent")
+        {
+            Debug.Log("tent");
+            LevelManager.instance.addRescuedScore(LevelManager.instance.getHeliCount());
+            LevelManager.instance.resetHeliCount();
+        }
     }
 }

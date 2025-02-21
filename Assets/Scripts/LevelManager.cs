@@ -44,6 +44,12 @@ public class LevelManager : MonoBehaviour
             // Then restart the level
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (rescuedScore == 8)
+        {
+            gameOver = true;
+            victoryScreen.SetActive(true);
+        }
     }
 
     public void GameOver()
@@ -75,9 +81,15 @@ public class LevelManager : MonoBehaviour
         return inHelicopterCount;
     }
 
-    public void setRescuedScore(int numRescued)
+    public void resetHeliCount()
+    {
+       inHelicopterCount = 0;
+    }
+
+    public void addRescuedScore(int numRescued)
     {
         rescuedScore += numRescued;
+        rescuedText.SetText("Soldiers Rescued: " + rescuedScore);
     }
 
     public void addHeliCount()
