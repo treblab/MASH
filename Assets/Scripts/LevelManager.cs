@@ -96,6 +96,5 @@ public class LevelManager : MonoBehaviour
     {
         inHelicopterCount++;
         inHelicopterText.SetText("Soldiers in Helicopter: " + inHelicopterCount);
-        Debug.Log("changing Ui");
     }
 }

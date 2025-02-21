@@ -57,15 +57,14 @@ public class Controller : MonoBehaviour
             {
                 LevelManager.instance.addHeliCount();
                 Destroy(collision.gameObject);
-            } 
+            }
             else
             {
                 Debug.Log("Max capacity reached!");
             }
 
         if (collision.gameObject.tag == "Tent")
-        {
-            Debug.Log("tent");
+        { 
             LevelManager.instance.addRescuedScore(LevelManager.instance.getHeliCount());
             LevelManager.instance.resetHeliCount();
         }
