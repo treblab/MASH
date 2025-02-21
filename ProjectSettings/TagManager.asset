@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tree
   - Soldiers
+  - Tent
   layers:
   - Default
   - TransparentFX
