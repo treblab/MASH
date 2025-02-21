@@ -21,15 +21,18 @@ public class Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (!LevelManager.instance.GameIsOver())
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if (movement.x < 0)
-        {
-            helicopter.transform.rotation = Quaternion.Euler(0, 180, 0); // Rotate to face left
-        }
-        else if (movement.x > 0)
-        {
-            helicopter.transform.rotation = Quaternion.Euler(0, 0, 0); // Rotate to face right
+            if (movement.x < 0)
+            {
+                helicopter.transform.rotation = Quaternion.Euler(0, 180, 0); // Rotate to face left
+            }
+            else if (movement.x > 0)
+            {
+                helicopter.transform.rotation = Quaternion.Euler(0, 0, 0); // Rotate to face right
+            }
         }
     }
 
@@ -41,7 +44,8 @@ public class Controller : MonoBehaviour
         if (collision.gameObject.tag == "Tree")
         {
             // Restart Level
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LevelManager.instance.GameOver();
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
