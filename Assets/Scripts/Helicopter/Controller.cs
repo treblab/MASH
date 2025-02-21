@@ -38,7 +38,7 @@ public class Controller : MonoBehaviour
         // Handle collisions here
         Debug.Log("Collided with: " + collision.gameObject.name);
 
-        if (collision.gameObject.name == "Trees")
+        if (collision.gameObject.tag == "Tree")
         {
             // Restart Level
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
