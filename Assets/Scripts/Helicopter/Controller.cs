@@ -36,20 +36,16 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Handle collisions heredw
-        Debug.Log("Collided with: " + collision.gameObject.name);
+        Debug.Log(collision.gameObject.name);
 
         if (collision.gameObject.tag == "Tree")
         {
             // Restart Level
             LevelManager.instance.GameOver();
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
         if (collision.gameObject.tag == "Soldier")
 
             // +1 soldier if not at max capacity
