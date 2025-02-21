@@ -8,13 +8,13 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-
     public static LevelManager instance;
 
     public TextMeshProUGUI rescuedText;
     public TextMeshProUGUI inHelicopterText;
 
-    [SerializeField] public GameObject gameOverScreen;
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject victoryScreen;
     private bool gameOver = false;
 
     private int rescuedScore = 0;
@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
         }
 
         gameOverScreen.SetActive(false);
+        victoryScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,12 +48,42 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverScreen.SetActive(true);
         gameOver = true;
+
+        if (rescuedScore == 8)
+        {
+            victoryScreen.SetActive(true);
+        } 
+        else
+        {
+            gameOverScreen.SetActive(true);
+        }
     }
 
     public bool GameIsOver()
     {
         return gameOver;
+    }
+
+    public int getRescuedScore()
+    {
+        return rescuedScore;
+    }
+
+    public int getHeliCount()
+    {
+        return inHelicopterCount;
+    }
+
+    public void setRescuedScore(int numRescued)
+    {
+        rescuedScore += numRescued;
+    }
+
+    public void addHeliCount()
+    {
+        inHelicopterCount++;
+        inHelicopterText.SetText("Soldiers in Helicopter: " + inHelicopterCount);
+        Debug.Log("changing Ui");
     }
 }

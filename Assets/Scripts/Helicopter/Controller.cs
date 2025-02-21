@@ -38,19 +38,32 @@ public class Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Handle collisions here
+        // Handle collisions heredw
         Debug.Log("Collided with: " + collision.gameObject.name);
 
         if (collision.gameObject.tag == "Tree")
         {
             // Restart Level
             LevelManager.instance.GameOver();
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collided with: " + collision.gameObject.name);
+
+        if (collision.gameObject.tag == "Soldier")
+
+            // +1 soldier if not at max capacity
+            if (LevelManager.instance.getHeliCount() < 3)
+            {
+                LevelManager.instance.addHeliCount();
+                Destroy(collision.gameObject);
+            } 
+            else
+            {
+                Debug.Log("Max capacity reached!");
+            }
+
     }
 }

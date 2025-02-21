@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tree
-  - Soldiers
   - Tent
+  - Soldier
   layers:
   - Default
   - TransparentFX
