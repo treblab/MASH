@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private GameObject maxCapacityMsg;
     private bool gameOver = false;
 
     private int rescuedScore = 0;
@@ -38,6 +39,7 @@ public class LevelManager : MonoBehaviour
 
         gameOverScreen.SetActive(false);
         victoryScreen.SetActive(false);
+        maxCapacityMsg.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,6 +55,15 @@ public class LevelManager : MonoBehaviour
         {
             gameOver = true;
             victoryScreen.SetActive(true);
+        }
+
+        if (inHelicopterCount == 3)
+        {
+            maxCapacityMsg.SetActive(true);
+        } 
+        else
+        {
+            maxCapacityMsg.SetActive(false);
         }
     }
 
