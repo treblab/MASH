@@ -7,6 +7,7 @@ TagManager:
   - Tree
   - Tent
   - Soldier
+  - Audio
   layers:
   - Default
   - TransparentFX

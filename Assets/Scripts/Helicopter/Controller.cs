@@ -8,10 +8,15 @@ public class Controller : MonoBehaviour
     [SerializeField] private GameObject helicopter;
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private AudioManager audioManager;
 
     private Vector2 movement;
 
-    void Update()
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+    private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -51,6 +56,7 @@ public class Controller : MonoBehaviour
             // +1 soldier if not at max capacity
             if (LevelManager.instance.getHeliCount() < 3)
             {
+                audioManager.PlaySFX(audioManager.pickup);
                 LevelManager.instance.addHeliCount();
                 Destroy(collision.gameObject);
             }
@@ -60,7 +66,8 @@ public class Controller : MonoBehaviour
             }
 
         if (collision.gameObject.tag == "Tent")
-        { 
+        {
+            audioManager.PlaySFX(audioManager.rescue);
             LevelManager.instance.addRescuedScore(LevelManager.instance.getHeliCount());
             LevelManager.instance.resetHeliCount();
         }

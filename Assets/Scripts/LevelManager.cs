@@ -20,8 +20,12 @@ public class LevelManager : MonoBehaviour
     private int rescuedScore = 0;
     private int inHelicopterCount = 0;
 
+    [SerializeField] private AudioManager audioManager;
+
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (instance == null)
         {
             instance = this;
@@ -58,10 +62,12 @@ public class LevelManager : MonoBehaviour
 
         if (rescuedScore == 8)
         {
+            audioManager.PlaySFX(audioManager.victory);
             victoryScreen.SetActive(true);
         } 
         else
         {
+            audioManager.PlaySFX(audioManager.gameOver);
             gameOverScreen.SetActive(true);
         }
     }
@@ -83,7 +89,8 @@ public class LevelManager : MonoBehaviour
 
     public void resetHeliCount()
     {
-       inHelicopterCount = 0;
+        inHelicopterCount = 0;
+        inHelicopterText.SetText("Soldiers in Helicopter: " + inHelicopterCount);
     }
 
     public void addRescuedScore(int numRescued)
