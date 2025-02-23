@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameOver && Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             // Then restart the level
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

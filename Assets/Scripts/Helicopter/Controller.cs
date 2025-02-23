@@ -9,7 +9,6 @@ public class Controller : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private AudioManager audioManager;
-    [SerializeField] private Animator animator;
 
     private Vector2 movement;
 
@@ -19,7 +18,6 @@ public class Controller : MonoBehaviour
     }
     private void Update()
     {
-        animator.Play("Movement");
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
