@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ParticleSystem explosionFX;
 
     private Vector2 movement;
 
@@ -47,6 +48,9 @@ public class Controller : MonoBehaviour
 
         if (collision.gameObject.tag == "Tree")
         {
+            // Explode the helicopter
+            explosionFX.Play();
+            helicopter.GetComponent<SpriteRenderer>().sortingOrder = -1;
             // Restart Level
             LevelManager.instance.GameOver();
         }
