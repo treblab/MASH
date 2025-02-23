@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      helicopter_1_0: -6786450770773611533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

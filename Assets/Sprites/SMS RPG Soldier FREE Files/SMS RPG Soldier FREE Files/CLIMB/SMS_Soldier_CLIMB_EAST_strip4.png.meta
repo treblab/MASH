@@ -215,7 +215,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SMS_Soldier_CLIMB_EAST_strip4_0: -4906046336083550502
+      SMS_Soldier_CLIMB_EAST_strip4_1: 834571912658863504
+      SMS_Soldier_CLIMB_EAST_strip4_2: 4518359691507015982
+      SMS_Soldier_CLIMB_EAST_strip4_3: 5683828782175799272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SMS_Soldier_AVATAR_ANGRY_0: 457056739447419517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

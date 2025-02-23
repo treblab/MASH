@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SMS_Soldier_JUMP_EAST_0: -422986074830310425
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

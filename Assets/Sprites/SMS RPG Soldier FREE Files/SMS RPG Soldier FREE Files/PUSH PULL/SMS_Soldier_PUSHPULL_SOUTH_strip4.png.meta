@@ -215,7 +215,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SMS_Soldier_PUSHPULL_SOUTH_strip4_0: -5921992565296253967
+      SMS_Soldier_PUSHPULL_SOUTH_strip4_1: 8582425995929397431
+      SMS_Soldier_PUSHPULL_SOUTH_strip4_2: 7261215961686542539
+      SMS_Soldier_PUSHPULL_SOUTH_strip4_3: -160355418816570486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
