@@ -61,7 +61,7 @@ public class Controller : MonoBehaviour
                 Destroy(collision.gameObject);
             }
 
-        if (collision.gameObject.tag == "Tent")
+        if (collision.gameObject.tag == "Tent" && LevelManager.instance.getHeliCount() != 0)
         {
             audioManager.PlaySFX(audioManager.rescue);
             LevelManager.instance.addRescuedScore(LevelManager.instance.getHeliCount());
