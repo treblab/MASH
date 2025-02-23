@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -311,7 +311,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      helicopter_0: -1604708741874733367
+      helicopter_1: 7778900192767916423
+      helicopter_2: -7853831770233140867
+      helicopter_3: -57389571188628275
+      helicopter_4: -7252307014325989224
+      helicopter_5: 7588356221740231231
+      helicopter_6: 8415881980380418632
+      helicopter_7: 1540207724371125964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
